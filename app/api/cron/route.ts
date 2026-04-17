@@ -5,6 +5,9 @@ import { buildEmailHtml } from '@/lib/emailTemplate';
 import { getFilteredRecipients } from '@/lib/audience';
 import { Member, AudienceGroup } from '@/types';
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 // This endpoint should be called by a cron job (e.g., Vercel Cron)
 // to process scheduled emails that are due
 export async function GET(request: NextRequest) {
