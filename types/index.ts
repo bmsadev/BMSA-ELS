@@ -45,9 +45,9 @@ export interface Settings {
 
 export type AudienceGroup =
   | 'SCOPH' | 'SCORA' | 'SCORP' | 'SCOME' | 'SCOPE' | 'SCORE'
-  | 'RSD' | 'PSD' | 'PNSD' | 'CBSD' | 'FSD' | 'EB' | 'MEMBERS_ONLY' | 'ALL';
+  | 'RSD' | 'PSD' | 'PNSD' | 'CBSD' | 'FSD' | 'EB' | 'MEMBERS_ONLY' | 'TO' | 'ALL';
 
 export const AUDIENCE_GROUPS: AudienceGroup[] = [
   'SCOPH', 'SCORA', 'SCORP', 'SCOME', 'SCOPE', 'SCORE',
-  'RSD', 'PSD', 'PNSD', 'CBSD', 'FSD', 'EB', 'MEMBERS_ONLY', 'ALL',
+  'RSD', 'PSD', 'PNSD', 'CBSD', 'FSD', 'EB', 'MEMBERS_ONLY', 'TO', 'ALL',
 ];

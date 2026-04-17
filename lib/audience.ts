@@ -23,6 +23,10 @@ export function getFilteredRecipients(
       filtered = activeMembers.filter(
         m => m?.role?.toLowerCase().includes('member')
       );
+    } else if (group === 'TO') {
+      filtered = activeMembers.filter(
+        m => m?.role?.toUpperCase() === 'TO' || m?.role?.toUpperCase().includes('TO')
+      );
     } else {
       filtered = activeMembers.filter(m => m?.committee?.toUpperCase() === group);
     }

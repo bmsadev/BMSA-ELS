@@ -20,7 +20,7 @@ export default function MemberTable({ members, onEdit, onDelete }: Props) {
 
   const committees = useMemo(() => {
     const set = new Set([
-      ...AUDIENCE_GROUPS.filter(g => g !== 'ALL' && g !== 'MEMBERS_ONLY'),
+      ...AUDIENCE_GROUPS.filter(g => g !== 'ALL' && g !== 'MEMBERS_ONLY' && g !== 'TO'),
       ...members.map(m => m.committee)
     ]);
     return Array.from(set).sort();
@@ -28,6 +28,8 @@ export default function MemberTable({ members, onEdit, onDelete }: Props) {
 
   const roles = useMemo(() => {
     const set = new Set(members.map(m => m.role).filter(Boolean));
+    set.add('TO');
+    set.add('Member');
     return Array.from(set).sort();
   }, [members]);
 

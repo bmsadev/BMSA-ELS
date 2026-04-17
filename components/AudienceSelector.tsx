@@ -25,6 +25,11 @@ export default function AudienceSelector({ selectedGroups, onSelectionChange, me
         m => m?.role?.toLowerCase().includes('member')
       ).length;
     }
+    if (group === 'TO') {
+      return activeMembers.filter(
+        m => m?.role?.toUpperCase() === 'TO' || m?.role?.toUpperCase().includes('TO')
+      ).length;
+    }
     return activeMembers.filter(m => m?.committee?.toUpperCase() === group).length;
   };
 

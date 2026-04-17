@@ -81,7 +81,7 @@ export default function AddMemberModal({ isOpen, onClose, onAdd }: AddMemberModa
               className="input-field"
             >
               <option value="">Select Committee</option>
-              {AUDIENCE_GROUPS.filter(g => g !== 'ALL' && g !== 'MEMBERS_ONLY').map(group => (
+              {AUDIENCE_GROUPS.filter(g => g !== 'ALL' && g !== 'MEMBERS_ONLY' && g !== 'TO').map(group => (
                 <option key={group} value={group}>{group}</option>
               ))}
             </select>
