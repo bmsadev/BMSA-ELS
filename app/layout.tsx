@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'BMSA Email Dashboard',
   description: 'Email management dashboard for Beni-Suef Medical Students\' Association',
   icons: {
-    icon: '/bmsa-logo.png',
+    icon: '/BMSA Logo Vertical.png',
   },
 };
 
