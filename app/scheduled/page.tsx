@@ -102,10 +102,10 @@ export default function ScheduledPage() {
 
                     <button
                       onClick={() => handleDelete(email.id, email.status === 'pending')}
-                      className="p-2 text-bmsa-text-light hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors ml-2"
+                      className="p-1.5 bg-red-500 text-white hover:bg-red-600 rounded-md transition-colors shadow-sm ml-2 inline-flex"
                       title="Delete"
                     >
-                      <TrashIcon size={18} />
+                      <TrashIcon size={16} />
                     </button>
                   </div>
                 </div>

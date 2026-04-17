@@ -1,6 +1,7 @@
 'use client';
 
 import { EmailTemplate } from '@/types';
+import { TrashIcon } from './Icons';
 
 interface Props {
   template: EmailTemplate;
@@ -51,9 +52,10 @@ export default function TemplateCard({ template, onLoad, onDelete }: Props) {
         </button>
         <button
           onClick={handleDelete}
-          className="px-3 py-2 text-xs font-medium text-red-500 border border-red-200 rounded-lg hover:bg-red-50 transition-colors"
+          className="p-2 bg-red-500 text-white hover:bg-red-600 rounded-lg transition-colors shadow-sm ml-2 inline-flex items-center justify-center"
+          title="Delete"
         >
-          Delete
+          <TrashIcon size={16} />
         </button>
       </div>
     </div>

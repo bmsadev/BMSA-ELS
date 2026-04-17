@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import AuthGuard from '@/components/AuthGuard';
 import Sidebar from '@/components/Sidebar';
-import { DownloadIcon, InboxIcon } from '@/components/Icons';
+import { DownloadIcon, InboxIcon, TrashIcon } from '@/components/Icons';
 import { HistoryEntry } from '@/types';
 
 export default function HistoryPage() {
@@ -147,12 +147,10 @@ export default function HistoryPage() {
                         <td className="py-3 px-4 text-center">
                           <button
                             onClick={() => deleteEntry(entry.id)}
-                            className="text-red-400 hover:text-red-600 transition-colors p-1 rounded-md hover:bg-red-50"
+                            className="p-1.5 bg-red-500 text-white hover:bg-red-600 rounded-md transition-colors shadow-sm inline-flex"
                             title="Delete"
                           >
-                            <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                              <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                            </svg>
+                            <TrashIcon size={16} />
                           </button>
                         </td>
                       </tr>

@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from 'react';
 import { Member, AUDIENCE_GROUPS } from '@/types';
-import { InboxIcon } from './Icons';
+import { InboxIcon, TrashIcon } from './Icons';
 
 interface Props {
   members: Member[];
@@ -219,9 +219,10 @@ export default function MemberTable({ members, onEdit, onDelete }: Props) {
                             </button>
                             <button
                               onClick={() => confirmDelete(member.id, member.name)}
-                              className="px-3 py-1.5 text-xs font-medium text-bmsa-text-light hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                              className="p-1.5 bg-red-500 text-white hover:bg-red-600 rounded-md transition-colors shadow-sm ml-2 inline-flex"
+                              title="Remove"
                             >
-                              Remove
+                              <TrashIcon size={16} />
                             </button>
                           </div>
                         </td>
