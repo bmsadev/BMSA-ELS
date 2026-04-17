@@ -12,11 +12,13 @@ export const revalidate = 0;
 // to process scheduled emails that are due
 export async function GET(request: NextRequest) {
   const authHeader = request.headers.get('authorization');
+  const urlKey = request.nextUrl.searchParams.get('key');
   
   // Protect the route in production but allow local testing
   if (
     process.env.NODE_ENV === 'production' &&
-    authHeader !== `Bearer ${process.env.CRON_SECRET}`
+    authHeader !== `Bearer ${process.env.CRON_SECRET}` &&
+    urlKey !== process.env.CRON_SECRET
   ) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
