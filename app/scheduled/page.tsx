@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import AuthGuard from '@/components/AuthGuard';
 import Sidebar from '@/components/Sidebar';
-import { ClockIcon, CalendarIcon } from '@/components/Icons';
+import { ClockIcon, CalendarIcon, TrashIcon } from '@/components/Icons';
 import { ScheduledEmail } from '@/types';
 
 export default function ScheduledPage() {
@@ -24,17 +24,17 @@ export default function ScheduledPage() {
       .finally(() => setIsLoading(false));
   }, []);
 
-  const handleCancel = async (id: string) => {
-    if (!window.confirm('Cancel this scheduled email?')) return;
+  const handleDelete = async (id: string, isPending: boolean) => {
+    if (!window.confirm(isPending ? 'Cancel this scheduled email?' : 'Delete this record?')) return;
 
     try {
       const res = await fetch(`/api/scheduled/${id}`, { method: 'DELETE' });
       if (res.ok) {
         setScheduled(prev => prev.filter(s => s.id !== id));
-        showToast('Scheduled email cancelled', 'success');
+        showToast(isPending ? 'Scheduled email cancelled' : 'Record deleted', 'success');
       }
     } catch {
-      showToast('Failed to cancel', 'error');
+      showToast('Failed to delete', 'error');
     }
   };
 
@@ -93,20 +93,20 @@ export default function ScheduledPage() {
 
                   <div className="flex items-center gap-3 ml-4">
                     {email.status === 'pending' ? (
-                      <>
-                        <span className="badge bg-amber-100 text-amber-700">Pending</span>
-                        <button
-                          onClick={() => handleCancel(email.id)}
-                          className="px-3 py-1.5 text-xs font-medium text-red-500 border border-red-200 rounded-lg hover:bg-red-50 transition-colors"
-                        >
-                          Cancel
-                        </button>
-                      </>
+                      <span className="badge bg-amber-100 text-amber-700">Pending</span>
                     ) : email.status === 'sent' ? (
                       <span className="badge badge-active">Sent</span>
                     ) : (
                       <span className="badge badge-inactive">Cancelled</span>
                     )}
+
+                    <button
+                      onClick={() => handleDelete(email.id, email.status === 'pending')}
+                      className="p-2 text-bmsa-text-light hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors ml-2"
+                      title="Delete"
+                    >
+                      <TrashIcon size={18} />
+                    </button>
                   </div>
                 </div>
               ))}
