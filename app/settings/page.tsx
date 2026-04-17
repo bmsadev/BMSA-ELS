@@ -97,19 +97,7 @@ export default function SettingsPage() {
                 </button>
               </div>
 
-              <div className="card p-6 space-y-3">
-                <h2 className="text-lg font-semibold text-bmsa-text">Environment Variables</h2>
-                <p className="text-sm text-bmsa-text-light">
-                  These are configured in your <code className="bg-bmsa-gray-100 px-1.5 py-0.5 rounded text-xs font-mono">.env.local</code> file:
-                </p>
-                <div className="bg-bmsa-gray-50 rounded-lg p-4 font-mono text-xs space-y-1.5">
-                  <p><span className="text-bmsa-red">BREVO_API_KEY</span>=your-api-key</p>
-                  <p><span className="text-bmsa-red">PRESIDENT_PASSWORD</span>=your-password</p>
-                  <p><span className="text-bmsa-red">AUTH_SECRET</span>=random-secret-string</p>
-                  <p><span className="text-bmsa-red">NEXT_PUBLIC_SUPABASE_URL</span>=https://your-project.supabase.co</p>
-                  <p><span className="text-bmsa-red">SUPABASE_SERVICE_ROLE_KEY</span>=your-service-key</p>
-                </div>
-              </div>
+
             </div>
           )}
         </main>
