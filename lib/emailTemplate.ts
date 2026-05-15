@@ -75,7 +75,7 @@ export function buildEmailHtml(params: EmailTemplateParams): string {
                 Beni-Suef Medical Students' Association &middot; BMSA
               </p>
               <p style="margin: 8px 0 0 0; font-size: 11px; color: #999999; line-height: 1.4;">
-                &copy; 2025 BMSA. Developed by <strong style="color: #cccccc;">Mahmoud Ahmed</strong>, All rights reserved.
+                &copy; 2026 BMSA. Developed by <strong style="color: #cccccc;">Mahmoud Ahmed</strong>, All rights reserved.
               </p>
             </td>
           </tr>
